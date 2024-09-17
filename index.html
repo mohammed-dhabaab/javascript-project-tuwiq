@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/91b0893a8f.js" crossorigin="anonymous"></script>
+    <style>
+        .main-hero-container {
+            padding: 40px 60px;
+
+        }
+
+        .main-hero-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            color: black;
+            padding: 20px;
+            padding-top: 100px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            height: 80vh;
+        }
+
+        .hero-title {
+            font-size: 50px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+        }
+
+        .hero-image {
+            font-size: 200px;
+        }
+
+        @media (min-width:740px) {
+            .main-hero-wrapper {
+                flex-direction: row;
+                gap: 100px;
+            }
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="logo-greeting-container">
+                <a href="index.html" class="logo-container"><i class="logo fa-solid fa-group-arrows-rotate"></i>
+                </a>
+                <!-- <h3 class="greeting"></h3> -->
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a title="Profile" class="profile-button" href="welcome.html" rel="noopener noreferrer"><i
+                        class="fa-solid fa-user"></i></a>
+                <button onclick="goToSign()" class="log-in-button">
+                    <i title="Sign in/Sign Up" class="fa-solid fa-right-to-bracket"></i>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main-hero-container">
+        <div class="main-hero-wrapper">
+            <div class="hero-title">
+                <span>Write Your</span> <span>Own Tweets!</span>
+            </div>
+            <div class="hero-image-container">
+                <i class="hero-image fa-solid fa-group-arrows-rotate"></i>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+        function goToSign() {
+            window.location.href = "sign.html"
+        }
+
+        const checkAllowance = () => {
+            const allowance = localStorage.getItem("allowance");
+            if (allowance === "true") {
+                document.querySelector(".log-in-button").classList.add("none")
+                document.querySelector(".profile-button").classList.remove("none")
+            } else {
+                document.querySelector(".profile-button").classList.add("none")
+            }
+        }
+        checkAllowance()
+    </script>
+</body>
+
+</html>

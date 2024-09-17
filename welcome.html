@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/91b0893a8f.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            color: white;
+        }
+
+        .header {
+            box-shadow: 1px 1px 20px 0.1px black;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        .logo-greeting-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .nav-list-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .greeting {
+            color: white;
+        }
+
+        .log-out-icon {
+            color: white;
+        }
+
+
+        .main-unauthorized-container {
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .back-home-btn {
+            background-color: #eaeaea;
+            color: black;
+            padding: 8px 40px;
+            width: fit-content;
+            border-radius: 20px;
+        }
+
+        .back-home-btn:hover {
+            background-color: rgb(225, 224, 224);
+        }
+
+        .main-content {
+            padding: 40px 60px;
+        }
+
+        .main-content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .event-image {
+            border-radius: 10px 10px 0 0;
+            height: 100%;
+        }
+
+        .event-content {
+            padding: 0 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .event-title {
+            color: #5800FF;
+        }
+
+        .event-disc {
+            font-size: 18px;
+        }
+
+        .date-time-loc-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: 4% 96%;
+            gap: 10px;
+        }
+
+        .event-icons {
+            color: #0096FF;
+        }
+
+        @media (min-width:740px) {
+            .main-content-wrapper {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .event-image {
+                border-radius: 10px 0 0 10px;
+            }
+
+            .event-content {
+                padding: 20px 20px 0 20px;
+            }
+        }
+
+
+        /*  */
+        .main-user-profile-container {
+            padding: 40px 60px;
+        }
+
+        .main-user-profile-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-photo-container {
+            /* background-color: #e9e6f0; */
+            padding: 0px;
+            border-radius: 50%;
+        }
+
+        .user-photo-icon {
+            font-size: 30px;
+            background-color: #e9e6f0;
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        .username-tag {
+            color: #000000;
+        }
+
+        .user-email {
+            color: #878585;
+        }
+
+        .edit-icon {
+            color: #b7b4b4;
+            cursor: pointer;
+        }
+
+        .user-info-main-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Adding posts */
+        .adding-event-container {
+            padding: 40px 60px;
+        }
+
+        .adding-event-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #eaeaea;
+            padding: 6px 12px;
+            border-radius: 4px;
+            max-height: 65px;
+            overflow: hidden;
+        }
+
+        input {
+            width: 100%;
+            padding: 6px 10px;
+            border: none;
+            background-color: transparent;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+        }
+
+        .adding-inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+        /*  */
+        .blog-container {
+            padding: 10px 60px 40px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .blog-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        .event-title-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .delete-icon {
+            color: #c5c5c6;
+            cursor: pointer;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .main-user-photo-container {
+            position: relative;
+        }
+
+        .photo-eidit-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="logo-greeting-container">
+                <a href="index.html" class="logo-container"><i class="logo fa-solid fa-group-arrows-rotate"></i></a>
+                <h3 class="greeting"></h3>
+            </div>
+
+            <!-- <nav class="nav-container">
+                <ul class="nav-list-container">
+                    <li class="list-item">Home</li>
+                    <li class="list-item">About</li>
+                    <li class="list-item">Contact</li>
+                </ul>
+            </nav> -->
+            <button onclick="logOut()" class="log-out-button">
+                <i style="color: #5800FF;" class="log-out-icon fa-solid fa-right-from-bracket"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-unauthorized-container none">
+        <h1>401 Unauthorized</h1>
+        <button onclick="logOut()" class="back-home-btn">Home</button>
+    </main>
+
+    <main class="main-user-profile-container">
+        <div class="main-user-profile-wrapper">
+            <div class="main-user-photo-container">
+                <div class="user-photo-container">
+                    <img class="user-photo" src="" width="80px">
+                    <i class="user-photo-icon fa-solid fa-user"></i>
+                </div>
+                <i onclick="editUserData('photo')" class="photo-eidit-icon edit-icon fa-solid fa-pen-to-square"></i>
+            </div>
+            <div class="user-info">
+                <div class="username-tag-container user-info-main-container">
+                    <h2 class="username-tag" id="username-tag"></h2> <i onclick="editUserData('username')"
+                        class="edit-icon fa-solid fa-pen-to-square"></i>
+                </div>
+                <div class="user-info-main-container">
+                    <p id="user-email" class="user-email"></p> <i onclick="editUserData('email')"
+                        class="edit-icon fa-solid fa-pen-to-square"></i>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <section class="adding-event-container">
+        <div class="adding-event-wrapper">
+            <h2 style="color: #0096FF;" class="adding-title">Add Tweet</h2>
+            <div class="adding-inputs">
+                <div class="input-container">
+                    <input type="text" maxlength="50" class="event-post-title-input" placeholder="Tweet title">
+                </div>
+                <div class="input-container">
+                    <input type="text" class="event-post-image-input" placeholder="Tweet image">
+                </div>
+                <div class="input-container">
+                    <!-- <textarea name="" id="" cols="30" rows="10" placeholder="Post content"></textarea> -->
+                    <input type="text" maxlength="240" class="event-post-content-input" placeholder="Tweet content">
+
+                </div>
+
+            </div>
+            <button onclick="addPost()" style="width: 100%; border-radius: 6px;"
+                class="adding-post-btn btn highlight-btn">Add</button>
+        </div>
+    </section>
+
+    <div class="posts-main-container">
+        <h2 style="text-align: center; padding-top: 20px; color: #0096FF; font-size: 30px;">Your Posts</h2>
+        <main class="blog-container">
+            <!-- <div class="blog-wrapper">
+                <div class="main-content-wrapper">
+                    <div class="event-image-container">
+                        <img src="https://plus.unsplash.com/premium_photo-1661774645265-ce387923cb5b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Dinner" class="event-image">
+                    </div>
+    
+                    <div class="event-content">
+                        <div class="event-title-container">
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <h1 class="event-title">Dinner Invitation</h1>
+                            </a>
+                            <i class="edit-icon fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <p class="event-disc">Join us for a delightful dinner! Enjoy good food and great company.</p>
+                    </div>
+    
+                </div>
+            </div> -->
+        </main>
+
+    </div>
+
+    <!-- <main class="main-content">
+        <div class="main-content-wrapper">
+            <div class="event-image-container">
+                <img src="https://plus.unsplash.com/premium_photo-1661774645265-ce387923cb5b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Dinner" class="event-image">
+            </div>
+
+            <div class="event-content">
+                <h1 class="event-title">Dinner Invitation</h1>
+                <p class="event-disc">Join us for a delightful dinner! Enjoy good food and great company.</p>
+                <div class="date-time-loc-container">
+                    <div class="event-date event-details"><i class="event-icons fa-solid fa-calendar-days"></i>
+                        <span>10/10/2024</span>
+                    </div>
+                    <div class="event-time event-details"><i class="event-icons fa-solid fa-clock"></i> 09:00 PM</div>
+                    <div class="event-location event-details"><i class="event-icons fa-solid fa-location-dot"></i>
+                        Nebula Vista,
+                        Zyvoria
+                        IX, Milky Way.</div>
+                </div>
+            </div>
+
+        </div>
+    </main> -->
+
+    <script>
+        const checkAllowance = () => {
+            const allowance = localStorage.getItem("allowance");
+            if (allowance === "false") {
+                document.querySelector(".header").classList.add("none")
+                document.querySelector(".adding-event-container").classList.add("none")
+                document.querySelector(".main-user-profile-container").classList.add("none")
+                document.querySelector(".posts-main-container").classList.add("none")
+                document.querySelector(".blog-container").classList.add("none")
+                document.querySelector(".main-unauthorized-container").classList.remove("none")
+            }
+        }
+        checkAllowance()
+
+        const logOutButton = document.querySelector(".log-out-button")
+
+        function logOut() {
+            window.location.href = "index.html"
+            localStorage.setItem("id", "-1")
+            localStorage.setItem("allowance", "false")
+        }
+
+
+        const apiURL = "https://66e87262b17821a9d9dcbf14.mockapi.io/users/signup/"
+        const userIDLocalStorage = localStorage.getItem("id")
+        const userApiURL = `${apiURL}${localStorage.getItem("id")}`
+        const greeting = document.querySelector('.greeting')
+        const usernameTag = document.getElementById("username-tag")
+        const userEmail = document.getElementById("user-email")
+        const userPhoto = document.querySelector(".user-photo")
+        const userPhotoIcon = document.querySelector(".user-photo-icon")
+
+        let userName = ""
+        async function getUser(url = "") {
+            try {
+                const response = await fetch(url)
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const user = await response.json();
+                userName = user.username
+                usernameTag.innerText = user.username
+                userEmail.innerText = user.email
+                if (user.photo) {
+                    userPhoto.src = user.photo
+                    userPhotoIcon.classList.add("none")
+                }
+                greeting.innerText = `Hi, ${userName}!`;
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        getUser(`${apiURL}${localStorage.getItem("id")}`)
+        greeting.innerText = `Hi, ${userName}!`;
+
+
+
+
+
+        function editUserData(type) {
+            const userInput = window.prompt(`Please enter new ${type}:`)
+            updateUserData(type, userInput)
+        }
+
+        async function updateUserData(type, value) {
+            try {
+                const response = await fetch(userApiURL, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        [type]: value
+                    }),
+                });
+
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                // console.log('User data updated successfully:', data);
+                location.reload(true);
+            } catch (error) {
+                console.error('Error updating user data:', error);
+            }
+        }
+
+
+
+
+
+
+
+
+        const eventPostTitleInput = document.querySelector(".event-post-title-input")
+        const eventPostImageInput = document.querySelector(".event-post-image-input")
+        const eventPostContentInput = document.querySelector(".event-post-content-input")
+
+        async function addPost() {
+            try {
+                const response = await fetch(userApiURL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const userData = await response.json();
+
+                const newPost = {
+                    title: eventPostTitleInput.value,
+                    image: eventPostImageInput.value,
+                    content: eventPostContentInput.value
+                };
+
+                const updatedPosts = userData.posts ? [...userData.posts, newPost] : [newPost];
+
+                const patchResponse = await fetch(userApiURL, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ posts: updatedPosts }),
+                });
+
+                location.reload(true);
+                if (!patchResponse.ok) {
+                    throw new Error(`HTTP error! Status: ${patchResponse.status}`);
+                }
+
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+
+
+
+
+        async function fetchPosts() {
+            try {
+                const response = await fetch(userApiURL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const userData = await response.json();
+                displayPosts(userData.posts || []);
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            }
+        }
+
+        function displayPosts(posts) {
+            const blogContainer = document.querySelector('.blog-container');
+            blogContainer.innerHTML = '';
+
+            posts.forEach((post, index) => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-wrapper';
+                postElement.innerHTML = `
+                    <div class="main-content-wrapper">
+                        <div class="event-image-container">
+                            <img src="${post.image}" alt="${post.title}" class="event-image">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-title-container">
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <h1 class="event-title">${post.title}</h1>
+                                </a>
+                                <i onclick="deletePost('${index}')" class="delete-icon fa-solid fa-trash"></i>
+                            </div>
+                            <p class="event-disc">${post.content}</p>
+                        </div>
+                    </div>
+                `;
+                blogContainer.appendChild(postElement);
+            });
+        }
+
+        fetchPosts();
+
+
+
+        function editUserPost(type) {
+            const userInput = window.prompt(`Please enter new ${type}:`)
+            updateUserData(type, userInput)
+        }
+
+        async function updateUserPost(type, value) {
+            try {
+                const response = await fetch(userApiURL, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        [type]: value
+                    }),
+                });
+
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                // console.log('User data updated successfully:', data);
+                location.reload(true);
+            } catch (error) {
+                console.error('Error updating user data:', error);
+            }
+        }
+
+
+        async function updatePost(postId) {
+            const title = window.prompt("Enter new title:");
+            const image = window.prompt("Enter new image URL:");
+            const content = window.prompt("Enter new content:");
+
+            if (title === null || image === null || content === null) {
+                return; // Exit if the user cancels any prompt
+            }
+
+            const updatedPost = {
+                title: title,
+                image: image,
+                content: content
+            };
+
+            try {
+                const user = await getUser(); // Await to get user data
+                if (!user || !user.posts || !user.posts[postId]) {
+                    console.error("Post not found");
+                    return;
+                }
+
+                // Update the specific post in the user's posts
+                user.posts[postId] = updatedPost;
+
+                const response = await fetch(userApiURL, {
+                    method: "PATCH", // Use PATCH for partial updates to the resource
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ posts: user.posts }), // Send the updated posts array
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                location.reload(); // Refresh the page to see the updated posts
+            } catch (error) {
+                console.error("Error updating post:", error);
+            }
+        }
+
+
+        async function getPosts() {
+            try {
+                const response = await fetch(userApiURL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const userData = await response.json();
+                return userData.posts
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            }
+        }
+
+        // async function getUser() {
+        //     try {
+        //         const response = await fetch(userApiURL);
+        //         if (!response.ok) {
+        //             throw new Error(`HTTP error! Status: ${response.status}`);
+        //         }
+
+        //         const userData = await response.json();
+        //         return userData
+        //     } catch (error) {
+        //         console.error("Error fetching posts:", error);
+        //     }
+        // }
+
+
+        // async function getUser() {
+        //     try {
+        //         const response = await fetch(userApiURL);
+
+        //         if (!response.ok) {
+        //             throw new Error(`HTTP error! Status: ${response.status}`);
+        //         }
+
+        //         const users = await response.json();
+        //         console.log(users)
+        //         // return users[localStorage.getItem("id")]
+
+        //     } catch (error) {
+        //         console.error("Error:", error);
+        //         return false;
+        //     }
+        // }
+
+
+
+
+
+
+
+        async function deletePost(postId) {
+            try {
+                const response = await fetch(userApiURL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const userData = await response.json();
+                userData.posts.splice(postId, 1)
+                console.log(userData)
+
+
+                const updateResponse = await fetch(`https://66e87262b17821a9d9dcbf14.mockapi.io/users/signup/${userIDLocalStorage}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userData),
+                });
+
+                window.reload()
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+
+</html>
